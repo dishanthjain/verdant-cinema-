@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07100c">
+  <meta name="description" content="Verdant — discover films worth your time. Browse movie posters by genre and search your next watch.">
+  <title>Verdant — Find Your Next Film</title>
+  <link rel="preconnect" href="https://image.tmdb.org">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Verdant home"><span class="brand-mark">V</span><span>verdant<span class="brand-dot">.</span></span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">Discover</a>
+      <a class="nav-link" href="#collection">Collections</a>
+      <a class="nav-link" href="#genres">Genres</a>
+    </nav>
+    <a class="nav-cta" href="#collection">Explore films <span>↗</span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR NEXT GREAT WATCH STARTS HERE</div>
+        <h1>Stories that<br>stay with <span>you.</span></h1>
+        <p class="hero-description">A handpicked universe of films, from cult classics to the stories everyone’s talking about. Find your next favourite.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#collection">Explore collection <span>↘</span></a>
+          <a class="text-link" href="#genres">Browse by genre <span>→</span></a>
+        </div>
+        <div class="hero-meta"><div class="meta-avatars"><span>✦</span><span>✦</span><span>✦</span></div><p><strong>Curated for the curious.</strong><br><span>Good films. No endless scrolling.</span></p></div>
+      </div>
+      <div class="hero-art" aria-label="Featured movie poster collage">
+        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+        <div class="poster poster-back"><img src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" alt="Oppenheimer poster"></div>
+        <div class="poster poster-mid"><img src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" alt="Avengers Infinity War poster"></div>
+        <div class="poster poster-front"><img src="https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg" alt="Inception poster"></div>
+        <div class="floating-tag"><span class="tag-star">✦</span><span><strong>Worth the watch</strong><small>Picked by film lovers</small></span></div>
+        <div class="hero-index">01 <span>/</span> 06</div>
+      </div>
+      <div class="hero-bottom-line"><span>INDEPENDENT TASTE. ENDLESS STORIES.</span><span>SCROLL TO DISCOVER ↓</span></div>
+    </section>
+
+    <section class="collection-section" id="collection">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="eyebrow-line"></span> THE COLLECTION</div><h2>Find your <span>kind of cinema.</span></h2></div>
+        <p>From edge-of-your-seat thrillers to films that make you feel everything.</p>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span class="search-icon">⌕</span><input id="movieSearch" type="search" placeholder="Search films, titles..." autocomplete="off" aria-label="Search movies"><kbd>⌘ K</kbd></label>
+        <div class="sort-label">EXPLORE <span>BY GENRE</span></div>
+      </div>
+      <div class="genre-row" id="genres">
+        <button class="genre-chip selected" data-genre="All">All films <span>✦</span></button>
+        <button class="genre-chip" data-genre="Action">Action</button>
+        <button class="genre-chip" data-genre="Comedy">Comedy</button>
+        <button class="genre-chip" data-genre="Horror">Horror</button>
+        <button class="genre-chip" data-genre="Sci-Fi">Sci-Fi</button>
+        <button class="genre-chip" data-genre="Drama">Drama</button>
+        <button class="genre-chip" data-genre="Romance">Romance</button>
+      </div>
+      <div class="results-line"><span id="resultsCount">12 FILMS TO DISCOVER</span><span>POSTERS • RATINGS • STORIES</span></div>
+      <div class="movie-grid" id="movieGrid"></div>
+      <div class="empty-state" id="emptyState" hidden><span>✦</span><h3>No films found</h3><p>Try another title or choose a different genre.</p><button class="button button-primary" id="resetFilters">Reset filters ↗</button></div>
+      <div class="collection-bottom"><span>YOU’VE REACHED THE END OF THIS COLLECTION</span><span class="green-dot"></span><span>MORE STORIES, ALWAYS.</span></div>
+    </section>
+
+    <section class="closing-cta">
+      <div class="cta-symbol">V<span>✦</span></div>
+      <div><div class="eyebrow"><span class="eyebrow-line"></span> KEEP YOUR CURIOSITY ALIVE</div><h2>There’s always<br><span>another story.</span></h2></div>
+      <a class="button button-outline" href="#home">Back to the top <span>↑</span></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#home"><span class="brand-mark">V</span><span>verdant<span class="brand-dot">.</span></span></a>
+    <p>A little less scrolling. A lot more cinema.</p>
+    <span>© 2026 VERDANT CINEMA</span>
+  </footer>
+  <div class="modal-backdrop" id="movieModal" aria-hidden="true">
+    <div class="movie-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close movie details">×</button>
+      <div class="modal-poster"><img id="modalPoster" src="" alt=""></div>
+      <div class="modal-copy"><div class="eyebrow"><span class="eyebrow-line"></span> FILM DETAILS</div><h2 id="modalTitle"></h2><div class="modal-meta" id="modalMeta"></div><p id="modalDescription"></p><div class="modal-cast" id="modalGenres"></div><a class="button button-primary trailer-link" id="trailerLink" href="#" target="_blank" rel="noreferrer">Find trailer <span>↗</span></a><small class="modal-note">Trailers open on YouTube. Films do not play on this website.</small></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
